@@ -23,7 +23,7 @@ body{font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-se
 .nav-links.open{display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(255,255,255,.98);padding:12px;border-bottom:1px solid #e2e8f0}
 }
 @keyframes typewrite{from{width:0}to{width:100%}}
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;background:#0f172a}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;background:#0f172a;overflow:hidden}
 #particleCanvas{position:absolute;inset:0;z-index:1;width:100%;height:100%}
 .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px;width:100%}
 .hero-greeting{font-size:1rem;color:var(--accent);font-weight:500;margin-bottom:8px;animation:fadeIn .6s ease .2s both}
@@ -37,11 +37,11 @@ body{font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-se
 .btn-primary:hover{background:#6366f1;transform:translateY(-2px)}
 .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25)}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-.sec{padding:80px 0}
+.sec{padding:100px 0}
 .sec-gray{background:#f8fafc}
 .sec-dark{background:#0f172a;position:relative;overflow:hidden}
 .sec-inner{max-width:1100px;margin:0 auto;padding:0 24px}
-.sec-header{text-align:center;margin-bottom:50px}
+.sec-header{text-align:center;margin-bottom:60px}
 .sec-title{font-size:2rem;font-weight:700;color:#0f172a;margin-bottom:12px}
 .sec-divider{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));border-radius:2px;margin:0 auto}
 .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
