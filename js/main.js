@@ -1,3 +1,7 @@
+// ========== Cursor Detection ==========
+if (window.matchMedia("(pointer: fine)").matches) {
+    document.documentElement.classList.add("has-pointer");
+}
 ﻿// ========== Particle Network ==========
 const canvas = document.getElementById("particleCanvas");
 if (canvas) {
