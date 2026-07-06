@@ -1,6 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;color:#1e293b;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;color:#1e293b;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased;}
 :root{--accent:#818cf8;--secondary:#38bdf8;--bg-dark:#0f172a;--text-light:#64748b}
 .gradient-text{background:linear-gradient(135deg,#818cf8,#38bdf8,#a78bfa);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradient 4s ease infinite}
 @keyframes gradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
