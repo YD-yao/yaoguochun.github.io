@@ -23,18 +23,11 @@ body {
     font-family: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text); background: var(--bg);
     line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden;
-    cursor: none;
 }
+.has-pointer body { cursor: none; }
 @media (max-width: 768px) { body { cursor: auto; } .cursor-glow { display: none !important; } }
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-/* ========== Noise Overlay ========== */
-.noise-overlay {
-    position: fixed; inset: 0; z-index: 9999;
-    pointer-events: none; opacity: 0.015;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-repeat: repeat; background-size: 256px 256px;
-}
 
 /* ========== Cursor Glow ========== */
 .cursor-glow {
@@ -126,7 +119,7 @@ body {
 @keyframes fadeInUp { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
 
 /* ========== Sections ========== */
-.section { padding: 100px 0; }
+.section { padding: 80px 0; }
 .section-alt { background: var(--bg-alt); position: relative; }
 .section-header { text-align: center; margin-bottom: 60px; }
 .section-title { font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; letter-spacing: -0.01em; }
