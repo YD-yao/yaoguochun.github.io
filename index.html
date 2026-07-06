@@ -1,217 +1,375 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姚国春 - AI产品经理</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>.fade-in{opacity:1!important;transform:translateY(0)!important}</style>
-
-</head>
-<body>
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo"><span>姚</span>国春</a>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">关于我</a>
-                <a href="#stats" class="nav-link">数据</a>
-                <a href="#experience" class="nav-link">工作经历</a>
-                <a href="#projects" class="nav-link">项目经验</a>
-                <a href="#skills" class="nav-link">专业能力</a>
-                <a href="#contact" class="nav-link">联系方式</a>
-            </div>
-            <button class="nav-toggle" id="navToggle">&#9776;</button>
-        </div>
-    </nav>
-
-    <section class="hero" id="hero">
-        <div style="position:absolute;inset:0;z-index:0;overflow:hidden">
-<img src="img/bg.png" alt="tech background" style="width:100%;height:100%;object-fit:cover;opacity:0.08">
-</div>
-        <canvas id="particleCanvas"></canvas>
-        <div class="hero-inner">
-            <h2 class="hero-greeting">你好，我是</h2>
-        <img src="img/avatar.png" alt="姚国春" class="hero-avatar-img" style="width:120px;height:120px;border-radius:50%;border:3px solid rgba(129,140,248,0.4);object-fit:cover;margin-bottom:16px">
-            <h1 class="hero-name gradient-text">姚国春</h1>
-            <p class="hero-title" id="typewriterEl"></p>
-            <p class="hero-desc">武汉大学硕士 | 从能源动力工程转向 AI 产品方向<br>具备工程思维、数据分析与跨团队协作的产品视角</p>
-            <div class="hero-btns">
-                <a href="#about" class="btn btn-primary">了解我的故事</a>
-                <a href="#contact" class="btn btn-outline">联系我</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="about">
-        <div class="sec-inner">
-            <div class="sec-header fade-in">
-                <h2 class="sec-title">关于我</h2>
-                <div class="sec-divider"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text fade-in">
-                    <p>我是姚国春，武汉大学硕士。在央企做工程师时，我发现自己最享受的不是画图纸，而是<strong>理解用户需求、协调多方资源、推动方案落地</strong>——这正是产品经理的日常。负责10+电力工程项目的经历让我确信：我具备数据驱动决策、结构化思维与跨团队沟通的核心产品素养。</p>
-                    <p>如今我正在系统学习AI产品方法论与机器学习基础，深度关注AI应用落地。我相信最好的AI产品不是炫技，而是解决真实世界的痛点。期待将工程思维与产品视角结合，打造真正有价值的AI产品。欢迎交流！</p>
-                </div>
-                <div class="about-info fade-in">
-                    <div class="info-item"><span>姓名</span><strong>姚国春</strong></div>
-                    <div class="info-item"><span>目标岗位</span><strong>AI 产品经理</strong></div>
-                    <div class="info-item"><span>最高学历</span><strong>硕士研究生</strong></div>
-                    <div class="info-item"><span>毕业院校</span><strong>武汉大学</strong></div>
-                    <div class="info-item"><span>手机</span><strong>19108461081</strong></div>
-                    <div class="info-item"><span>邮箱</span><strong>19108461081@163.com</strong></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec sec-dark" id="stats">
-        <div class="sec-inner">
-            <div class="stats-grid">
-                <div class="stat-item fade-in"><div class="stat-num stat-counter" data-target="2">0</div><div class="stat-label">SCI 论文</div></div>
-                <div class="stat-item fade-in"><div class="stat-num stat-counter" data-target="10">0</div><div class="stat-label">电力工程项目</div></div>
-                <div class="stat-item fade-in"><div class="stat-num stat-counter" data-target="80">0</div><div class="stat-label">专业图纸绘制</div></div>
-                <div class="stat-item fade-in"><div class="stat-num stat-counter" data-target="60">0</div><div class="stat-label">驻场服务天数</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="experience">
-        <div class="sec-inner">
-            <div class="sec-header fade-in">
-                <h2 class="sec-title">工作经历</h2>
-                <div class="sec-divider"></div>
-            </div>
-            <div class="card tilt-card fade-in">
-                <div class="card-h">中冶南方都市环保工程技术股份有限公司 <span class="badge">央企</span></div>
-                <div class="card-sub">工艺工程师 <span class="muted">2024.07 — 2025.04</span></div>
-                <div class="card-b">
-                    <div class="card-item"><h4>需求分析与方案设计</h4><p>主导多个大型电力项目的<strong>需求梳理与方案设计</strong>。通过深入施工一线收集痛点反馈，迭代优化图纸规范，<strong>使图纸问题率降低约30%</strong>，显著减少返工。全程实践需求分析、优先级排序与迭代优化的产品方法论。</p></div>
-                    <div class="card-item"><h4>跨团队沟通与协作</h4><p>驻现场60天，协调<strong>业主、设计、施工各方利益</strong>，推动解决施工问题10余起。在多方冲突中寻找最优解，确保项目高效推进。这段经历让我深刻理解跨角色沟通的痛点和技巧。</p></div>
-                    <div class="card-item"><h4>技术文档与规范</h4><p>负责工程设计文档标准化，注重信息架构与用户视角，确保文档可理解、可执行。</p></div>
-                </div>
-            </div>
-                <div class="card-item"><h4>文档体系与产品规范</h4><p>建立从<strong>需求文档到施工指引</strong>的完整文档体系，注重信息架构与用户视角，确保复杂信息对下游团队清晰可理解——这与PRD撰写的产品基本功直接对应。</p></div>
-        </div>
-    </section>
-
-    <section class="sec sec-gray" id="journey">
-    <div class="sec-inner">
-      <div class="sec-header fade-in">
-        <h2 class="sec-title">转型之路</h2>
-        <div class="sec-divider"></div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>姚国春 - AI 产品经理 | 个人简历</title>
+  <meta name="description" content="姚国春，武汉大学硕士，从能源动力工程转型 AI 产品方向。数据驱动、用户导向的 AI 产品经理。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#hero" class="nav-logo"><span>姚</span>国春</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">关于我</a>
+        <a href="#experience" class="nav-link">经历</a>
+        <a href="#projects" class="nav-link">项目</a>
+        <a href="#skills" class="nav-link">技能</a>
+        <a href="#blog" class="nav-link">博客</a>
+        <a href="#contact" class="nav-link">联系</a>
       </div>
-      <div class="journey-grid fade-in">
-        <div class="journey-card jc-engineer">
-          <div class="jc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-          <h3>工程师阶段</h3>
-          <p>武汉大学硕士 · 央企工程师</p>
-          <div class="jc-detail">掌握数据分析、需求梳理、跨团队协作等核心技能</div>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-avatar">姚</div>
+      <p class="hero-greeting fade-in">你好，我是</p>
+      <h1 class="hero-name fade-in fade-in-d1">姚国春</h1>
+      <p class="hero-title fade-in fade-in-d2" id="typewriterText"></p>
+      <p class="hero-desc fade-in fade-in-d3">
+        武汉大学硕士 · 从能源动力工程转向 AI 产品方向<br>
+        数据驱动 · 用户导向 · 持续学习
+      </p>
+      <div class="hero-btns fade-in fade-in-d3">
+        <a href="#about" class="btn btn-primary">了解我的故事</a>
+        <a href="#contact" class="btn btn-outline">联系我</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">关于我</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text fade-in fade-in-d1">
+          <p>我是姚国春，武汉大学硕士。在央企做工程师时，我发现自己最享受的不是画图纸，而是<strong>理解用户需求、协调多方资源、推动方案落地</strong>——这正是产品经理的日常。负责 10+ 电力工程项目的经历让我确信：我具备数据驱动决策、结构化思维与跨团队沟通的核心产品素养。</p>
+          <p>如今我正在系统学习 AI 产品方法论与机器学习基础，深度关注 AI 应用落地。我相信最好的 AI 产品不是炫技，而是解决真实世界的痛点。期待将工程思维与产品视角结合，打造真正有价值的 AI 产品。欢迎交流！</p>
         </div>
-        <div class="journey-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <div class="journey-card jc-transform">
-          <div class="jc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
-          <h3>转型期</h3>
-          <p>AI 产品经理方向转型</p>
-          <div class="jc-detail">系统学习AI产品方法论、用户研究、产品管理工具</div>
-        </div>
-        <div class="journey-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <div class="journey-card jc-pm">
-          <div class="jc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-          <h3>目标</h3>
-          <p>AI 产品经理</p>
-          <div class="jc-detail">用工程思维+数据驱动，打造真正解决用户痛点的 AI 产品</div>
+        <div class="about-card fade-in fade-in-d2">
+          <div class="info-row"><span class="info-label">姓名</span><span class="info-value">姚国春</span></div>
+          <div class="info-row"><span class="info-label">目标岗位</span><span class="info-value">AI 产品经理</span></div>
+          <div class="info-row"><span class="info-label">最高学历</span><span class="info-value">硕士研究生</span></div>
+          <div class="info-row"><span class="info-label">毕业院校</span><span class="info-value">武汉大学</span></div>
+          <div class="info-row"><span class="info-label">手机</span><span class="info-value">19108461081</span></div>
+          <div class="info-row"><span class="info-label">邮箱</span><span class="info-value">19108461081@163.com</span></div>
         </div>
       </div>
     </div>
   </section>
-    <section class="sec sec-gray" id="projects">
-        <div class="sec-inner">
-            <div class="sec-header fade-in">
-                <h2 class="sec-title">项目经验</h2>
-                <div class="sec-divider"></div>
-            </div>
-            <div class="card tilt-card fade-in">
-                <div style="margin-bottom:24px;max-width:850px;margin-left:auto;margin-right:auto"><img src="img/project.png" alt="科研项目" style="width:100%;height:200px;object-fit:cover;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08)"></div>
-<div class="card-h">超声除垢产品方案研发 — 与中核合作项目</div>
-                <div class="card-sub"><span class="badge badge-accent">项目负责人</span> <span class="muted">2022.12 — 2024.06</span></div>
-                <div class="card-b">
-                    <div class="card-item"><h4>项目背景</h4><p>核电厂蒸汽发生器长期运行结垢严重，传统化学清洗成本高且效果有限。中核集团寻求创新解决方案，我们团队承担了此项合作研发项目。</p></div>
-                    <div class="card-item"><h4>产品思维实践</h4><p>从用户需求出发，设计实验方案、搭建测试平台，通过数据驱动方式迭代参数优化。独立完成建模与数据分析，发表 2 篇 SCI 论文。</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-      <h3 style="text-align:center;margin:40px 0 20px;color:#0f172a;font-size:1.1rem">项目流程</h3>
-      <div class="project-flow fade-in">
-        <div class="flow-step"><div class="flow-icon fi1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><strong>问题发现</strong><span>核电结垢痛点</span></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-icon fi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><strong>方案设计</strong><span>实验搭建+建模</span></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-icon fi3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><strong>数据迭代</strong><span>3轮实验优化</span></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-icon fi4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><strong>成果交付</strong><span>SCI + 书面认可</span></div>
-      </div>
 
-    <section class="sec" id="showcase">
-        <div class="sec-inner">
-            <div class="sec-header fade-in">
-                <h2 class="sec-title gradient-text">技术工具箱</h2>
-                <div class="sec-divider"></div>
-            </div>
-            <div class="grid-3 fade-in">
-                <div class="tool-card"><div class="tool-icon tc1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364"/></svg></div><h3>AutoCAD</h3><p>工程制图 · 电力专业图纸</p></div>
-                <div class="tool-card"><div class="tool-icon tc2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div><h3>ANSYS Fluent</h3><p>流体仿真 · 超声波建模分析</p></div>
-                <div class="tool-card"><div class="tool-icon tc3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>视频剪辑</h3><p>剪辑 · 特效 · 内容创作</p></div>
-                <div class="tool-card"><div class="tool-icon tc4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3>三维建模</h3><p>SolidWorks · 3D 建模设计</p></div>
-                <div class="tool-card"><div class="tool-icon tc5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Python</h3><p>数据分析 · 脚本开发</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec sec-gray" id="skills">
-        <div class="sec-inner">
-            <div class="sec-header fade-in">
-                <h2 class="sec-title">专业能力</h2>
-<p style="text-align:center;color:#64748b;margin-top:-40px;margin-bottom:40px;font-size:0.9rem">数据驱动 · 用户导向 · 持续学习</p>
-                <div class="sec-divider"></div>
-            </div>
-            <div <div style="margin-bottom:30px;text-align:center"><img src="img/skills.png" alt="技能展示" style="max-width:100%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08)"></div>
-class="grid-2 fade-in">
-                <div class="skill-card"><h3>产品管理</h3><p>需求分析 · 用户调研 · 竞品分析 · PRD 撰写</p><div class="tags"><span>需求文档</span><span>用户调研</span><span>竞品分析</span><span>原型设计</span></div></div>
-                <div class="skill-card"><h3>数据分析</h3><p>Python · 可视化 · MATLAB</p><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
-                <div class="skill-card"><h3>AI 产品思维</h3><p>机器学习基础 · A/B 测试 · 用户增长</p><div class="tags"><span>AI 产品认知</span><span>A/B 测试</span><span>OKR</span></div></div>
-                <div class="skill-card"><h3>核心软实力</h3><div class="tags"><span>跨团队沟通</span><span>问题拆解</span><span>结构化思维</span><span>快速学习</span></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec" id="contact">
-        <div class="sec-inner">
-            <div class="sec-header fade-in">
-                <h2 class="sec-title">联系方式</h2>
-                <div class="sec-divider"></div>
-            </div>
-            <div class="contact-grid fade-in">
-                <div class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:19108461081">19108461081</a></div>
-                <div class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:19108461081@163.com">19108461081@163.com</a></div>
-                <div class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>甘肃省武威市</span></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2026 姚国春</p>
-        <p class="muted">从工程到产品，保持好奇，持续进化</p>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-<!-- OK -->
-</html>
+  <!-- Stats -->
+  <section class="stats-section section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in"><div class="stat-num stat-counter" data-target="2">0</div><div class="stat-label">SCI 论文</div></div>
+        <div class="stat-item fade-in fade-in-d1"><div class="stat-num stat-counter" data-target="10">0</div><div class="stat-label">电力工程项目</div></div>
+        <div class="stat-item fade-in fade-in-d2"><div class="stat-num stat-counter" data-target="80">0</div><div class="stat-label">专业图纸绘制</div></div>
+        <div class="stat-item fade-in fade-in-d3"><div class="stat-num stat-counter" data-target="60">0</div><div class="stat-label">驻场服务天数</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">工作经历</h2>
+        <p class="section-subtitle">从工程师到产品经理，每一步都在积累核心能力</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-company">中冶南方都市环保工程技术股份有限公司 <span class="badge">央企</span></div>
+            <div class="timeline-role">工艺工程师 <span class="muted">2024.07 — 2025.04</span></div>
+            <div class="timeline-detail">
+              <h4>需求分析与方案设计</h4>
+              <p>主导多个大型电力项目的<strong>需求梳理与方案设计</strong>。通过深入施工一线收集痛点反馈，迭代优化图纸规范，<strong>使图纸问题率降低约 30%</strong>，显著减少返工。全程实践需求分析、优先级排序与迭代优化的产品方法论。</p>
+              <h4>跨团队沟通与协作</h4>
+              <p>驻现场 60 天，协调<strong>业主、设计、施工各方利益</strong>，推动解决施工问题 10 余起。在多方冲突中寻找最优解，确保项目高效推进。</p>
+              <h4>文档体系与产品规范</h4>
+              <p>建立从<strong>需求文档到施工指引</strong>的完整文档体系，注重信息架构与用户视角，确保复杂信息对下游团队清晰可理解——这与 PRD 撰写的产品基本功直接对应。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey (Career Path) -->
+  <section class="section" id="journey">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">转型之路</h2>
+        <p class="section-subtitle">从工程师到 AI 产品经理，每一步都在靠近目标</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="journey-grid fade-in">
+        <div class="journey-card jc-engineer">
+          <div class="journey-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <h3>工程师阶段</h3>
+          <p>武汉大学硕士 · 央企工程师</p>
+          <p class="journey-detail">掌握数据分析、需求梳理、跨团队协作等核心技能</p>
+        </div>
+        <div class="journey-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="journey-card jc-transform">
+          <div class="journey-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>
+            </svg>
+          </div>
+          <h3>转型期</h3>
+          <p>AI 产品经理方向转型</p>
+          <p class="journey-detail">系统学习 AI 产品方法论、用户研究、产品管理工具</p>
+        </div>
+        <div class="journey-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="journey-card jc-pm">
+          <div class="journey-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>目标</h3>
+          <p>AI 产品经理</p>
+          <p class="journey-detail">用工程思维 + 数据驱动，打造真正解决用户痛点的 AI 产品</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">项目经验</h2>
+        <p class="section-subtitle">从问题发现到成果交付，完整的产品思维实践</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <div class="project-icon pi-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+            </svg>
+          </div>
+          <h3>核电结垢问题研究</h3>
+          <p>从用户需求出发，设计实验方案、搭建测试平台，通过数据驱动方式迭代参数优化。独立完成建模与数据分析，发表 2 篇 SCI 论文。</p>
+          <div class="project-tags">
+            <span class="project-tag">需求分析</span>
+            <span class="project-tag">实验设计</span>
+            <span class="project-tag">数据分析</span>
+            <span class="project-tag">SCI</span>
+          </div>
+        </div>
+        <div class="project-card fade-in fade-in-d1">
+          <div class="project-icon pi-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>大型电力工程项目管理</h3>
+          <p>主导 10+ 电力工程项目的需求梳理与方案设计，深入一线收集反馈、迭代优化，使图纸问题率降低约 30%。协调业主、设计、施工多方资源。</p>
+          <div class="project-tags">
+            <span class="project-tag">项目管理</span>
+            <span class="project-tag">跨团队协作</span>
+            <span class="project-tag">需求分析</span>
+          </div>
+        </div>
+        <div class="project-card fade-in fade-in-d2">
+          <div class="project-icon pi-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>AI 产品方法论学习与实践</h3>
+          <p>系统学习机器学习基础、用户研究方法、A/B 测试、数据驱动决策等产品方法论。深度关注 AI 应用落地，用工程思维解决真实世界痛点。</p>
+          <div class="project-tags">
+            <span class="project-tag">AI 产品</span>
+            <span class="project-tag">用户研究</span>
+            <span class="project-tag">A/B 测试</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">专业能力</h2>
+        <p class="section-subtitle">数据驱动 · 用户导向 · 持续学习</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card fade-in">
+          <h3>产品管理</h3>
+          <p>需求分析 · 用户调研 · 竞品分析 · PRD 撰写</p>
+          <div class="skill-tags">
+            <span class="skill-tag">需求文档</span>
+            <span class="skill-tag">用户调研</span>
+            <span class="skill-tag">竞品分析</span>
+            <span class="skill-tag">原型设计</span>
+          </div>
+        </div>
+        <div class="skill-card fade-in fade-in-d1">
+          <h3>数据分析</h3>
+          <p>Python · 可视化 · MATLAB</p>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card fade-in fade-in-d2">
+          <h3>AI 产品思维</h3>
+          <p>机器学习基础 · A/B 测试 · 用户增长</p>
+          <div class="skill-tags">
+            <span class="skill-tag">AI 产品认知</span>
+            <span class="skill-tag">A/B 测试</span>
+            <span class="skill-tag">OKR</span>
+          </div>
+        </div>
+        <div class="skill-card fade-in fade-in-d3">
+          <h3>核心软实力</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">跨团队沟通</span>
+            <span class="skill-tag">问题拆解</span>
+            <span class="skill-tag">结构化思维</span>
+            <span class="skill-tag">快速学习</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Tools -->
+  <section class="section section-alt" id="tools">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">技术工具箱</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="tools-grid fade-in">
+        <div class="tool-card">
+          <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364"/></svg></div>
+          <h3>AutoCAD</h3>
+          <p>工程制图 · 电力专业图纸</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+          <h3>ANSYS Fluent</h3>
+          <p>流体仿真 · 超声波建模分析</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <h3>视频剪辑</h3>
+          <p>剪辑 · 特效 · 内容创作</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+          <h3>三维建模</h3>
+          <p>SolidWorks · 3D 建模设计</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3>Python</h3>
+          <p>数据分析 · 脚本开发</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog (New Section) -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">博客文章</h2>
+        <p class="section-subtitle">记录转型路上的思考与学习笔记</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card fade-in">
+          <div class="blog-img">&#128221;</div>
+          <div class="blog-body">
+            <p class="blog-date">2026 年 6 月</p>
+            <h3>从工程师到产品经理：我的转型思考</h3>
+            <p>回顾从央企工程师到 AI 产品经理的转型之路，分享我在转型过程中的心路历程与实践经验。</p>
+            <a href="#" class="blog-link">阅读更多 →</a>
+          </div>
+        </article>
+        <article class="blog-card fade-in fade-in-d1">
+          <div class="blog-img">&#128640;</div>
+          <div class="blog-body">
+            <p class="blog-date">2026 年 7 月</p>
+            <h3>AI 产品经理需要具备哪些核心能力？</h3>
+            <p>从技术认知到用户研究，从数据驱动到商业思维，梳理 AI 产品经理的能力图谱。</p>
+            <a href="#" class="blog-link">阅读更多 →</a>
+          </div>
+        </article>
+        <article class="blog-card fade-in fade-in-d2">
+          <div class="blog-img">&#128202;</div>
+          <div class="blog-body">
+            <p class="blog-date">2026 年 7 月</p>
+            <h3>如何用数据驱动决策：我的工程实践</h3>
+            <p>在电力工程项目中，我是如何通过数据分析优化方案、降低问题率的真实案例分析。</p>
+            <a href="#" class="blog-link">阅读更多 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">联系方式</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact-grid fade-in">
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:19108461081">19108461081</a>
+        </div>
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:19108461081@163.com">19108461081@163.com</a>
+        </div>
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>甘肃省武威市</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 姚国春</p>
+    <p class="motto">从工程到产品，保持好奇，持续进化</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
