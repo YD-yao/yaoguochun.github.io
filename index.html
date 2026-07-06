@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>姚国春 - AI产品经理</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🤖</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>\U0001f916</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="noise-overlay"></div>
+
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#hero" class="nav-logo"><span>姚</span>国春</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="nav-link">关于我</a></li>
+                <li><a href="#stats" class="nav-link">数据</a></li>
                 <li><a href="#experience" class="nav-link">工作经历</a></li>
                 <li><a href="#projects" class="nav-link">项目经验</a></li>
                 <li><a href="#skills" class="nav-link">专业能力</a></li>
@@ -26,15 +30,17 @@
             </button>
         </div>
     </nav>
+
     <section class="hero" id="hero">
+        <canvas id="particleCanvas"></canvas>
         <div class="hero-bg"></div>
         <div class="container hero-content">
             <div class="hero-text">
                 <p class="hero-greeting">你好，我是</p>
-                <h1 class="hero-name">姚国春</h1>
-                <p class="hero-title">AI 产品经理 · 工程师背景</p>
-                <p class="hero-tagline">武汉大学硕士 | 从能源动力工程转向 AI 产品方向<br/>具备工程思维、数据分析与跨团队协作的产品视角</p>
-                <div class="hero-actions">
+                <h1 class="hero-name gradient-text">姚国春</h1>
+                <p class="hero-title" id="typewriter"></p>
+                <p class="hero-tagline reveal">武汉大学硕士 | 从能源动力工程转向 AI 产品方向<br/>具备工程思维、数据分析与跨团队协作的产品视角</p>
+                <div class="hero-actions reveal">
                     <a href="#about" class="btn btn-primary">了解我的故事</a>
                     <a href="#contact" class="btn btn-outline">联系我</a>
                 </div>
@@ -45,19 +51,20 @@
             <div class="scroll-arrow"></div>
         </div>
     </section>
+
     <section class="section" id="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">关于我</h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="about-grid reveal">
-                <div class="about-bio">
+            <div class="about-grid">
+                <div class="about-bio reveal" style="transition-delay: 0.1s">
                     <p>我是姚国春，一名正在从能源动力工程领域向 AI 产品方向转型的实践者。拥有武汉大学硕士学位，具备扎实的工程背景和数据分析能力，曾在一家央企负责电力工程项目的全流程工作。</p>
                     <p>在工程实践中，我积累了跨角色沟通、需求梳理与问题拆解的能力——这些正是产品经理的核心素养。我擅长从数据中发现规律，从用户反馈中提炼需求，并用结构化的方式推动方案落地。</p>
                     <p>我对 AI 产品充满热情，持续学习机器学习基础、产品方法论与用户研究领域知识，期待将工程思维与产品视角结合，打造真正解决用户痛点的 AI 产品。</p>
                 </div>
-                <div class="about-info">
+                <div class="about-info reveal" style="transition-delay: 0.2s">
                     <div class="info-card">
                         <div class="info-item"><span class="info-label">姓名</span><span class="info-value">姚国春</span></div>
                         <div class="info-item"><span class="info-label">目标岗位</span><span class="info-value">AI 产品经理</span></div>
@@ -70,13 +77,37 @@
             </div>
         </div>
     </section>
-    <section class="section section-alt" id="experience">
+
+    <section class="section section-alt stats-section" id="stats">
         <div class="container">
-            <div class="section-header">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="stat-counter" data-target="2">0</span></div>
+                    <div class="stat-label">SCI 论文</div>
+                </div>
+                <div class="stat-item reveal" style="transition-delay: 0.1s">
+                    <div class="stat-number"><span class="stat-counter" data-target="10">0</span>+</div>
+                    <div class="stat-label">电力工程项目</div>
+                </div>
+                <div class="stat-item reveal" style="transition-delay: 0.2s">
+                    <div class="stat-number"><span class="stat-counter" data-target="80">0</span>+</div>
+                    <div class="stat-label">专业图纸绘制</div>
+                </div>
+                <div class="stat-item reveal" style="transition-delay: 0.3s">
+                    <div class="stat-number"><span class="stat-counter" data-target="60">0</span></div>
+                    <div class="stat-label">驻场服务天数</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
                 <h2 class="section-title">工作经历</h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="experience-card reveal">
+            <div class="experience-card tilt-card reveal">
                 <div class="exp-header">
                     <div class="exp-company">
                         <h3>中冶南方都市环保工程技术股份有限公司</h3>
@@ -88,59 +119,43 @@
                     </div>
                 </div>
                 <div class="exp-body">
-                    <div class="exp-item">
-                        <h4>需求分析与方案设计</h4>
-                        <p>参与10+个电力工程项目，主导图纸需求梳理与方案优化。通过深入一线与施工团队沟通，收集反馈并优化设计规范，使图纸现场疑问减少约30%，降低返工率。锻炼了从需求收集到方案落地的全流程产品思维。</p>
-                    </div>
-                    <div class="exp-item">
-                        <h4>跨团队沟通与协作</h4>
-                        <p>驻项目一线服务60天，协调设计方、施工方与业主方等多方诉求，发现并推动解决施工问题10余起。深刻理解跨角色沟通中的痛点与协作技巧，能够有效平衡各方利益推进项目。</p>
-                    </div>
-                    <div class="exp-item">
-                        <h4>技术文档与产品规范</h4>
-                        <p>负责工程设计文档的撰写与标准化，建立清晰的文档规范。注重信息架构与用户视角，确保技术文档对一线施工团队可理解、可执行。</p>
-                    </div>
+                    <div class="exp-item"><h4>需求分析与方案设计</h4><p>参与10+个电力工程项目，主导图纸需求梳理与方案优化。通过深入一线与施工团队沟通，收集反馈并优化设计规范，使图纸现场疑问减少约30%，降低返工率。锻炼了从需求收集到方案落地的全流程产品思维。</p></div>
+                    <div class="exp-item"><h4>跨团队沟通与协作</h4><p>驻项目一线服务60天，协调设计方、施工方与业主方等多方诉求，发现并推动解决施工问题10余起。深刻理解跨角色沟通中的痛点与协作技巧，能够有效平衡各方利益推进项目。</p></div>
+                    <div class="exp-item"><h4>技术文档与产品规范</h4><p>负责工程设计文档的撰写与标准化，建立清晰的文档规范。注重信息架构与用户视角，确保技术文档对一线施工团队可理解、可执行。</p></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section" id="projects">
+
+    <section class="section section-alt" id="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">项目经验</h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="research-card reveal">
+            <div class="research-card tilt-card reveal">
                 <div class="research-header">
                     <div class="research-role">项目负责人</div>
                     <div class="research-period">2022.12 — 2024.06</div>
                 </div>
                 <h3 class="research-title">超声除垢产品方案研发 — 与中核合作项目</h3>
                 <div class="research-body">
-                    <div class="research-item">
-                        <h4>项目背景与目标</h4>
-                        <p>与中核集团合作，研究超声波在核电厂蒸汽发生器中的除垢阻垢方案。目标是找到最优参数组合，降低设备维护成本。</p>
-                    </div>
-                    <div class="research-item">
-                        <h4>产品思维实践</h4>
-                        <p>从用户需求（核电厂运维痛点）出发，设计实验方案、搭建测试平台，通过数据驱动的方式迭代参数优化。独立完成建模与数据分析，撰写 2 篇核心论文，研究成果获合作单位书面认可。</p>
-                    </div>
-                    <div class="research-item">
-                        <h4>能力沉淀</h4>
-                        <p>完整经历了一个从需求定义、方案设计、数据验证到成果交付的项目周期。具备工程建模、仿真分析与数据可视化的实战能力，能快速将复杂问题结构化。</p>
-                    </div>
+                    <div class="research-item"><h4>项目背景与目标</h4><p>与中核集团合作，研究超声波在核电厂蒸汽发生器中的除垢阻垢方案。目标是找到最优参数组合，降低设备维护成本。</p></div>
+                    <div class="research-item"><h4>产品思维实践</h4><p>从用户需求（核电厂运维痛点）出发，设计实验方案、搭建测试平台，通过数据驱动的方式迭代参数优化。独立完成建模与数据分析，撰写 2 篇核心论文，研究成果获合作单位书面认可。</p></div>
+                    <div class="research-item"><h4>能力沉淀</h4><p>完整经历了一个从需求定义、方案设计、数据验证到成果交付的项目周期。具备工程建模、仿真分析与数据可视化的实战能力，能快速将复杂问题结构化。</p></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section section-alt" id="skills">
+
+    <section class="section" id="skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">专业能力</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="skills-grid">
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" style="transition-delay: 0.1s">
                     <h3 class="skill-category-title">产品管理</h3>
                     <p class="skill-desc">需求分析、用户调研、竞品分析、PRD 撰写、原型设计</p>
                     <div class="skill-tags">
@@ -151,16 +166,16 @@
                         <span class="skill-tag">原型设计</span>
                     </div>
                 </div>
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" style="transition-delay: 0.2s">
                     <h3 class="skill-category-title">数据分析</h3>
                     <p class="skill-desc">具备数据分析与可视化能力，能基于数据驱动产品决策</p>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-item"><div class="skill-bar-label"><span>Python</span><span>熟练</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div>
-                        <div class="skill-bar-item"><div class="skill-bar-label"><span>数据分析/可视化</span><span>熟练</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
-                        <div class="skill-bar-item"><div class="skill-bar-label"><span>MATLAB</span><span>熟练</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+                        <div class="skill-bar-item"><div class="skill-bar-label"><span>Python</span><span>熟练</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div></div>
+                        <div class="skill-bar-item"><div class="skill-bar-label"><span>数据分析/可视化</span><span>熟练</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div></div>
+                        <div class="skill-bar-item"><div class="skill-bar-label"><span>MATLAB</span><span>熟练</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" style="transition-delay: 0.3s">
                     <h3 class="skill-category-title">AI 与产品思维</h3>
                     <p class="skill-desc">持续学习 AI 产品方法论与机器学习基础知识</p>
                     <div class="skill-tags">
@@ -171,7 +186,7 @@
                         <span class="skill-tag">OKR / KPI</span>
                     </div>
                 </div>
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" style="transition-delay: 0.4s">
                     <h3 class="skill-category-title">核心软实力</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">跨团队沟通</span>
@@ -185,37 +200,66 @@
             </div>
         </div>
     </section>
-    <section class="section" id="education">
+
+    
+    <section class="section section-dark showcase-section" id="showcase">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">教育背景</h2>
+            <div class="section-header reveal">
+                <h2 class="section-title">技术工具箱</h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2022.09 — 2024.06</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-degree">硕士 · 能源动力</h3>
-                        <p class="timeline-school">武汉大学 · 动力与机械学院</p>
-                        <p class="timeline-detail">研究方向：超声波除垢、光催化、超疏水材料</p>
-                        <p class="timeline-detail">发表 SCI 论文 2 篇</p>
+            <div class="showcase-grid">
+                <div class="showcase-card reveal" style="transition-delay: 0s">
+                    <div class="showcase-card-bg" style="background: linear-gradient(135deg, #1e3a5f, #2d5a87);"></div>
+                    <div class="showcase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364"/></svg>
                     </div>
+                    <h3 class="showcase-name">AutoCAD</h3>
+                    <p class="showcase-desc">工程制图 · 电力/环保专业图纸</p>
+                    <span class="showcase-level">专家级</span>
                 </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2018.09 — 2022.06</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-degree">本科 · 核工程与核技术</h3>
-                        <p class="timeline-school">武汉大学 · 动力与机械学院</p>
+                <div class="showcase-card reveal" style="transition-delay: 0.1s">
+                    <div class="showcase-card-bg" style="background: linear-gradient(135deg, #0f766e, #14b8a6);"></div>
+                    <div class="showcase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
                     </div>
+                    <h3 class="showcase-name">ANSYS Fluent</h3>
+                    <p class="showcase-desc">流体仿真 · 超声波衰减建模分析</p>
+                    <span class="showcase-level">熟练</span>
+                </div>
+                <div class="showcase-card reveal" style="transition-delay: 0.2s">
+                    <div class="showcase-card-bg" style="background: linear-gradient(135deg, #6d28d9, #8b5cf6);"></div>
+                    <div class="showcase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    </div>
+                    <h3 class="showcase-name">视频剪辑</h3>
+                    <p class="showcase-desc">剪辑 · 特效 · 内容创作</p>
+                    <span class="showcase-level">熟练</span>
+                </div>
+                <div class="showcase-card reveal" style="transition-delay: 0.3s">
+                    <div class="showcase-card-bg" style="background: linear-gradient(135deg, #b45309, #f59e0b);"></div>
+                    <div class="showcase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="showcase-name">三维建模</h3>
+                    <p class="showcase-desc">SolidWorks · 3D 建模与设计</p>
+                    <span class="showcase-level">熟练</span>
+                </div>
+                <div class="showcase-card reveal" style="transition-delay: 0.4s">
+                    <div class="showcase-card-bg" style="background: linear-gradient(135deg, #1e40af, #3b82f6);"></div>
+                    <div class="showcase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 class="showcase-name">Python</h3>
+                    <p class="showcase-desc">数据分析 · 脚本开发 · 自动化</p>
+                    <span class="showcase-level">熟练</span>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section section-alt" id="contact">
+<section class="section section-alt" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">联系方式</h2>
                 <div class="section-divider"></div>
             </div>
@@ -235,12 +279,15 @@
             </div>
         </div>
     </section>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 姚国春</p>
             <p class="footer-built">从工程到产品，保持好奇，持续进化</p>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
+
