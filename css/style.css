@@ -218,8 +218,8 @@ a:hover { color: var(--primary-dark); }
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
 .blog-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; transition: all .3s; box-shadow: var(--shadow-sm); }
 .blog-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
-.blog-img { width: 100%; height: 180px; object-fit: cover; background: var(--primary-light); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2rem; }
-.blog-body { padding: 20px; }
+.blog-img { width: 100%; height: 160px; object-fit: cover; display: flex; align-items: center; justify-content: center; transition: transform .4s ease; } .blog-card:hover .blog-img { transform: scale(1.03); }
+.blog-body { padding: 22px 24px; }
 .blog-date { font-size: .75rem; color: var(--text-muted); margin-bottom: 6px; }
 .blog-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
 .blog-card p { font-size: .85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
