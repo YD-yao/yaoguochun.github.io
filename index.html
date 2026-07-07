@@ -1,894 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>姚国春 | AI 产品经理</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>姚国春 | AI 产品经理 - 个人主页</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #172033;
-      --muted: #5d6678;
-      --line: #dce2ea;
-      --paper: #f7f9fc;
-      --white: #ffffff;
-      --blue: #2563eb;
-      --cyan: #0e9f9a;
-      --green: #3f8f5f;
-      --amber: #b47620;
-      --shadow: 0 18px 45px rgba(23, 32, 51, 0.10);
-      --radius: 8px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(220, 226, 234, 0.86);
-      background: rgba(247, 249, 252, 0.92);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav-inner {
-      width: min(1120px, calc(100% - 40px));
-      height: 64px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      font-size: 14px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    .hero {
-      min-height: calc(100vh - 64px);
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(120deg, rgba(247, 249, 252, 0.95) 0%, rgba(247, 249, 252, 0.76) 48%, rgba(247, 249, 252, 0.52) 100%),
-        url("assets/ai-product-dashboard.png") center right / cover no-repeat;
-    }
-
-    .hero-inner {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 76px 0 92px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
-      gap: 54px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      margin: 0 0 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--cyan);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--cyan);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(46px, 7vw, 82px);
-      line-height: 0.96;
-      letter-spacing: 0;
-    }
-
-    .hero-title {
-      max-width: 720px;
-    }
-
-    .hero-title span {
-      display: block;
-      margin-top: 16px;
-      color: #27405f;
-      font-size: clamp(24px, 3.2vw, 38px);
-      line-height: 1.2;
-      font-weight: 750;
-    }
-
-    .hero-copy {
-      max-width: 670px;
-      margin: 28px 0 0;
-      color: #3f4b61;
-      font-size: 18px;
-    }
-
-    .hero-actions {
-      margin-top: 34px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      color: var(--ink);
-      font-size: 15px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(23, 32, 51, 0.06);
-    }
-
-    .button.primary {
-      border-color: var(--blue);
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    .hero-panel {
-      align-self: stretch;
-      display: grid;
-      align-content: end;
-      gap: 14px;
-    }
-
-    .signal-card {
-      border: 1px solid rgba(220, 226, 234, 0.9);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.88);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    .signal-card strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--ink);
-      font-size: 16px;
-    }
-
-    .signal-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .metric {
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--white);
-    }
-
-    .metric b {
-      display: block;
-      color: var(--blue);
-      font-size: 26px;
-      line-height: 1;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    section {
-      padding: 84px 0;
-    }
-
-    .section-inner {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .section-kicker {
-      margin: 0 0 10px;
-      color: var(--cyan);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.14;
-      letter-spacing: 0;
-    }
-
-    .section-lede {
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .card {
-      min-height: 100%;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--white);
-      padding: 24px;
-      box-shadow: 0 12px 28px rgba(23, 32, 51, 0.05);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-      line-height: 1.3;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .icon {
-      width: 38px;
-      height: 38px;
-      margin-bottom: 16px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      color: var(--white);
-      background: var(--blue);
-      font-weight: 800;
-      font-size: 15px;
-    }
-
-    .icon.alt {
-      background: var(--cyan);
-    }
-
-    .icon.green {
-      background: var(--green);
-    }
-
-    .icon.amber {
-      background: var(--amber);
-    }
-
-    .case-section {
-      background: var(--white);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .case-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-      gap: 34px;
-      align-items: start;
-    }
-
-    .case-summary {
-      position: sticky;
-      top: 90px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f8fafc;
-      padding: 26px;
-    }
-
-    .case-summary h3 {
-      margin: 0 0 14px;
-      font-size: 23px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 0 10px;
-      border: 1px solid #cbd6e4;
-      border-radius: 8px;
-      color: #36506e;
-      background: var(--white);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 18px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fbfcfe;
-    }
-
-    .step b {
-      color: var(--blue);
-      font-size: 14px;
-    }
-
-    .step h4 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-
-    .step p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .experience {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 28px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--white);
-    }
-
-    .experience .meta {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .experience h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
-    }
-
-    .experience ul,
-    .ai-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .experience li,
-    .ai-list li {
-      margin: 6px 0;
-    }
-
-    .ai-section {
-      background: #eef5f4;
-      border-top: 1px solid #cfdfdd;
-      border-bottom: 1px solid #cfdfdd;
-    }
-
-    .ai-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .ai-note {
-      border: 1px solid #c7ddda;
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.78);
-      padding: 26px;
-    }
-
-    .ai-note h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-    }
-
-    .school {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .school:last-child {
-      border-bottom: 0;
-    }
-
-    .school strong {
-      display: block;
-      font-size: 17px;
-    }
-
-    .school span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer {
-      padding: 64px 0;
-      color: var(--white);
-      background: #172033;
-    }
-
-    .footer-inner {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .footer h2 {
-      color: var(--white);
-      font-size: clamp(28px, 3.6vw, 42px);
-    }
-
-    .footer p {
-      max-width: 680px;
-      color: #c8d2e1;
-    }
-
-    .contact {
-      display: grid;
-      gap: 10px;
-      color: #e9eef7;
-      font-size: 15px;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: auto;
-        background-position: center;
-      }
-
-      .hero-inner,
-      .case-layout,
-      .ai-layout,
-      .education-grid,
-      .footer-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-panel {
-        align-content: start;
-      }
-
-      .grid-3,
-      .grid-4 {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .case-summary {
-        position: static;
-      }
-
-      .experience {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .nav-inner,
-      .hero-inner,
-      .section-inner,
-      .footer-inner {
-        width: min(100% - 28px, 1120px);
-      }
-
-      section {
-        padding: 58px 0;
-      }
-
-      .hero-inner {
-        padding: 54px 0 62px;
-      }
-
-      .hero-copy {
-        font-size: 16px;
-      }
-
-      .grid-3,
-      .grid-4,
-      .metrics {
-        grid-template-columns: 1fr;
-      }
-
-      .step {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .school {
-        display: block;
-      }
-
-      .contact {
-        white-space: normal;
-      }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--paper:#f8fafc;--white:#fff;--blue:#3b82f6;--blue-dark:#1d4ed8;--cyan:#0e9f9a;--green:#10b981;--amber:#f59e0b;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 12px rgba(0,0,0,.08);--shadow-lg:0 12px 32px rgba(0,0,0,.10);--radius:12px;--radius-sm:8px}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter','PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7}
+    a{color:var(--blue);text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;color:var(--ink)}
+    .brand-mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:800;font-size:13px}
+    .nav-links{display:flex;gap:28px;color:var(--muted);font-size:14px;font-weight:500}
+    .nav-links a:hover{color:var(--blue)}
+    .hero{min-height:100vh;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url('assets/bg.png') center/cover no-repeat;opacity:.12;z-index:0}
+    .hero-gradient{position:absolute;inset:0;background:linear-gradient(135deg,rgba(248,250,252,.97) 0%,rgba(248,250,252,.88) 50%,rgba(248,250,252,.82) 100%);z-index:1}
+    .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:48px 24px 64px;min-height:100vh;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+    .hero-left{padding-right:24px}
+    .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--cyan);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+    .eyebrow::before{content:'';width:32px;height:3px;border-radius:2px;background:var(--cyan)}
+    .hero-title{font-size:clamp(40px,6vw,76px);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:8px}
+    .hero-title .highlight{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subtitle{font-size:clamp(18px,2.5vw,28px);font-weight:600;color:var(--muted);margin-bottom:24px;line-height:1.3}
+    .hero-desc{font-size:17px;line-height:1.7;color:var(--muted);max-width:560px;margin-bottom:32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer;transition:all .2s;box-shadow:var(--shadow-sm)}
+    .btn:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+    .btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .btn-primary:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+    .hero-right{display:flex;flex-direction:column;gap:20px}
+    .avatar-frame{width:200px;height:200px;border-radius:50%;overflow:hidden;border:4px solid var(--white);box-shadow:var(--shadow-lg);margin:0 auto}
+    .avatar-frame img{width:100%;height:100%;object-fit:cover}
+    .hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .hero-metric{background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:8px;padding:16px;text-align:center}
+    .hero-metric b{display:block;font-size:24px;color:var(--blue);line-height:1.2}
+    .hero-metric span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+    .hero-card{background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:12px;padding:20px}
+    .hero-card strong{display:block;font-size:15px;margin-bottom:8px}
+    .hero-card p{font-size:14px;color:var(--muted);line-height:1.6}
+    section{padding:96px 0}
+    .section-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+    .section-head{max-width:720px;margin-bottom:48px}
+    .section-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+    .section-kicker::before{content:'';width:28px;height:2px;border-radius:1px;background:var(--cyan)}
+    h2{font-size:clamp(28px,3.6vw,44px);font-weight:700;line-height:1.2;letter-spacing:-.01em;margin-bottom:16px}
+    .section-lede{font-size:17px;color:var(--muted);line-height:1.2}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:var(--shadow-sm);transition:all .25s ease}
+    .card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;margin-bottom:16px;font-weight:700;font-size:15px;color:#fff}
+    .card-icon.blue{background:var(--blue)}
+    .card-icon.cyan{background:var(--cyan)}
+    .card-icon.green{background:var(--green)}
+    .card-icon.amber{background:var(--amber)}
+    .card h3{font-size:18px;font-weight:600;margin-bottom:10px;line-height:1.3}
+    .card p{font-size:15px;color:var(--muted);line-height:1.65}
+    .skill-image-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:32px;box-shadow:var(--shadow-sm)}
+    .skill-image-card img{border-radius:8px;box-shadow:var(--shadow-md)}
+    .skill-text h3{font-size:20px;margin-bottom:12px}
+    .skill-text ul{list-style:none;padding:0}
+    .skill-text li{padding:8px 0;font-size:15px;color:var(--muted);display:flex;align-items:center;gap:10px}
+    .skill-text li::before{content:'\2713';color:var(--green);font-weight:700}
+    .case-section{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .case-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start}
+    .case-image{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md)}
+    .case-summary{position:sticky;top:88px}
+    .case-summary h3{font-size:22px;font-weight:700;margin-bottom:16px}
+    .case-meta{display:grid;gap:8px;margin-bottom:16px;font-size:15px;color:var(--muted)}
+    .case-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tag{display:inline-flex;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;background:#eef2ff;color:var(--blue)}
+    .timeline{display:grid;gap:16px}
+    .step{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;display:grid;grid-template-columns:80px 1fr;gap:16px}
+    .step-label{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+    .step h4{font-size:16px;font-weight:600;margin-bottom:6px}
+    .step p{font-size:14px;color:var(--muted);line-height:1.6}
+    .video-section{background:var(--ink);color:var(--white)}
+    .video-section .section-kicker{color:var(--cyan)}
+    .video-section .section-lede{color:#94a3b8}
+    .video-wrapper{position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);background:#1e293b;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-top:40px}
+    .video-wrapper .play-btn{width:80px;height:80px;border-radius:50%;background:rgba(59,130,246,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;box-shadow:0 0 0 16px rgba(59,130,246,.2)}
+    .video-wrapper .play-btn:hover{transform:scale(1.1);background:var(--blue)}
+    .video-wrapper .play-btn svg{width:32px;height:32px;fill:#fff;margin-left:4px}
+    .video-placeholder-text{position:absolute;bottom:24px;left:24px;right:24px;text-align:center;font-size:15px;color:#94a3b8}
+    .experience-list{display:grid;gap:20px}
+    .experience-item{display:grid;grid-template-columns:220px 1fr;gap:28px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:var(--shadow-sm)}
+    .exp-company h3{font-size:17px;font-weight:600;margin-bottom:6px}
+    .exp-meta{font-size:13px;color:var(--muted);line-height:1.5}
+    .exp-detail ul{margin:0;padding-left:18px;font-size:15px;color:var(--muted)}
+    .exp-detail li{margin:6px 0;line-height:1.6}
+    .ai-section{background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 100%);border-top:1px solid #bbf7d0;border-bottom:1px solid #bbf7d0}
+    .ai-layout{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+    .ai-card{background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid #bbf7d0;border-radius:12px;padding:28px}
+    .ai-card h3{font-size:18px;font-weight:700;margin-bottom:16px}
+    .ai-list{list-style:none;padding:0}
+    .ai-list li{padding:10px 0;font-size:15px;color:var(--muted);display:flex;gap:10px;border-bottom:1px solid #dcfce7}
+    .ai-list li:last-child{border-bottom:none}
+    .ai-list li::before{content:'\2192';color:var(--green);font-weight:600}
+    .edu-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .school-item{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line)}
+    .school-item:last-child{border-bottom:none}
+    .school-item strong{display:block;font-size:16px}
+    .school-item .school-date{font-size:13px;color:var(--muted);margin-top:2px}
+    .school-item .school-badge{font-size:12px;color:var(--blue);font-weight:600;white-space:nowrap}
+    .footer{background:var(--ink);color:var(--white);padding:64px 0}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center}
+    .footer h2{font-size:clamp(24px,3vw,36px);margin-bottom:20px}
+    .footer p{color:#94a3b8;font-size:16px;max-width:600px;margin:0 auto 40px;line-height:1.6}
+    .footer-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:32px}
+    .footer-contact-item{display:flex;align-items:center;gap:8px;color:#cbd5e1;font-size:15px}
+    .footer-contact-item svg{width:20px;height:20px;fill:var(--blue)}
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:1024px){
+      .hero-inner{grid-template-columns:1fr;text-align:center;padding-top:80px;min-height:auto}
+      .hero-left{padding-right:0}
+      .hero-desc{margin:0 auto 32px}
+      .hero-actions{justify-content:center}
+      .hero-right{order:-1}
+      .grid-3,.grid-4{grid-template-columns:1fr 1fr}
+      .case-layout,.ai-layout,.edu-grid{grid-template-columns:1fr}
+      .skill-image-card{grid-template-columns:1fr}
+      .experience-item{grid-template-columns:1fr;gap:16px}
+      .step{grid-template-columns:1fr;gap:8px}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none}
+      section{padding:64px 0}
+      .grid-3,.grid-4{grid-template-columns:1fr}
+      .hero-metrics{grid-template-columns:repeat(3,1fr)}
+      .footer-contact{flex-direction:column;gap:16px;align-items:center}
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+      },{threshold:.15});
+      document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-68,behavior:'smooth'})}})
+      })
+    });
+  </script>
 </head>
 <body>
-  <nav class="site-nav" aria-label="主导航">
-    <div class="nav-inner">
-      <a class="brand" href="#top" aria-label="姚国春个人主页">
-        <span class="brand-mark">YG</span>
-        <span>姚国春</span>
-      </a>
-      <div class="nav-links">
-        <a href="#position">个人定位</a>
-        <a href="#case">项目案例</a>
-        <a href="#experience">工作经历</a>
-        <a href="#ai">AI 产品认知</a>
-        <a href="#contact">联系我</a>
-      </div>
+  <nav class="site-nav"><div class="nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark">YG</span>姚国春</a>
+    <div class="nav-links">
+      <a href="#position">定位</a>
+      <a href="#capability">能力</a>
+      <a href="#case">项目</a>
+      <a href="#video">视频</a>
+      <a href="#experience">经历</a>
+      <a href="#contact">联系</a>
     </div>
-  </nav>
-
-  <main id="top">
+  </div></nav>
+  <main>
     <header class="hero">
+      <div class="hero-gradient"></div>
       <div class="hero-inner">
-        <div>
-          <p class="eyebrow">AI Product Manager Candidate</p>
-          <h1 class="hero-title">
-            姚国春
-            <span>工科系统思维驱动的 AI 产品经理</span>
-          </h1>
-          <p class="hero-copy">
-            985 工科硕士，具备央企工程项目与从 0 到 1 项目构建经验。深度使用 ChatGPT、DeepSeek、GLM 等大模型产品，关注 AI 交互体验、Prompt 调试与数据驱动决策。
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#case">查看项目案例</a>
-            <a class="button" href="#contact">联系我</a>
-          </div>
+        <div class="hero-left">
+          <p class="eyebrow">AI Product Manager</p>
+          <h1 class="hero-title"><span class="highlight">姚国春</span></h1>
+          <p class="hero-subtitle">工科系统思维驱动的 AI 产品经理</p>
+          <p class="hero-desc">985 工科硕士，具备央企工程项目与从 0 到 1 项目构建经验。深度使用 ChatGPT、DeepSeek、GLM 等大模型产品，关注 AI 交互体验、Prompt 调试与数据驱动决策。</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#case">查看项目案例</a><a class="btn" href="#contact">联系我</a></div>
         </div>
-
-        <aside class="hero-panel" aria-label="核心亮点">
-          <div class="metrics">
-            <div class="metric">
-              <b>985</b>
-              <span>武汉大学硕士</span>
-            </div>
-            <div class="metric">
-              <b>0-1</b>
-              <span>完整项目闭环</span>
-            </div>
-            <div class="metric">
-              <b>2</b>
-              <span>SCI 论文成果</span>
-            </div>
+        <div class="hero-right">
+          <div class="avatar-frame"><img src="assets/avatar.png" alt="avatar"></div>
+          <div class="hero-metrics">
+            <div class="hero-metric"><b>985</b><span>武汉大学硕士</span></div>
+            <div class="hero-metric"><b>0-1</b><span>完整项目闭环</span></div>
+            <div class="hero-metric"><b>2</b><span>SCI 论文成果</span></div>
           </div>
-          <div class="signal-card">
-            <strong>求职方向</strong>
-            <p>AI 产品经理、AIGC 产品经理、产品助理、AI 应用产品方向。期望薪资 20K，可随时到岗。</p>
-          </div>
-        </aside>
+          <div class="hero-card"><strong>求职方向</strong><p>AI 产品经理、AIGC 产品经理、产品助理、AI 应用产品方向。期望薪资 20K，可随时到岗。</p></div>
+        </div>
       </div>
     </header>
-
-    <section id="position">
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="section-kicker">POSITIONING</p>
-          <h2>把复杂工程问题，转译成可验证、可交付的产品方案。</h2>
-          <p class="section-lede">
-            你的优势不只是“会用 AI 工具”，而是有扎实的系统拆解能力、量化验证习惯和跨角色推动经验。这些能力正好适合 AI 产品从概念走向真实业务落地。
-          </p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon">工</div>
-            <h3>工程背景</h3>
-            <p>武汉大学能源动力硕士、核工程本科，具备面对复杂技术场景时的理解力和结构化表达能力。</p>
-          </article>
-          <article class="card">
-            <div class="icon alt">产</div>
-            <h3>产品闭环</h3>
-            <p>经历需求拆解、方案设计、原型搭建、装配调试、数据验证与成果交付的完整链路。</p>
-          </article>
-          <article class="card">
-            <div class="icon green">AI</div>
-            <h3>AI 敏感度</h3>
-            <p>持续使用和观察主流大模型产品，关注对话体验、Prompt 优化和 AI 应用价值。</p>
-          </article>
+    <section id="position"><div class="section-inner">
+      <div class="section-head fade-in">
+        <p class="section-kicker">POSITIONING</p>
+        <h2>把复杂工程问题，翻译成可验证、可交付的产品方案。</h2>
+        <p class="section-lede">你的优势不只是"会用 AI 工具"，而是有扎实的系统拆解能力、量化验证习惯和跨角色推动经验。这些能力正好适合 AI 产品从概念走向真实业务落地。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card fade-in"><div class="card-icon blue">工</div><h3>工程背景</h3><p>武汉大学能源动力硕士、核工程本科，具备面对复杂技术场景时的理解力和结构化表达能力。</p></article>
+        <article class="card fade-in"><div class="card-icon cyan">产</div><h3>产品闭环</h3><p>经历需求拆解、方案设计、原型搭建、装配调试、数据验证与成果交付的完整链路。</p></article>
+        <article class="card fade-in"><div class="card-icon green">AI</div><h3>AI 敏感度</h3><p>持续使用和观察主流大模型产品，关注对话体验、Prompt 优化和 AI 应用价值。</p></article>
+      </div>
+    </div></section>
+    <section id="capability" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="section-inner">
+      <div class="section-head fade-in"><p class="section-kicker">CAPABILITY</p><h2>AI 产品经理所需的四类底层能力。</h2></div>
+      <div class="grid-4">
+        <article class="card fade-in"><div class="card-icon blue">01</div><h3>需求分析</h3><p>将"除霾效率低"等工程问题拆解为可量化研究目标和参数优化任务。</p></article>
+        <article class="card fade-in"><div class="card-icon cyan">02</div><h3>数据决策</h3><p>使用 MATLAB、Origin 进行建模、可视化和参数优化，形成证据驱动的判断。</p></article>
+        <article class="card fade-in"><div class="card-icon green">03</div><h3>跨方协同</h3><p>在设总方、施工方、供应商和业务方之间对齐需求、推动共识、解决现场问题。</p></article>
+        <article class="card fade-in"><div class="card-icon amber">04</div><h3>交付意识</h3><p>参与 10+ 项目、输出 80+ 张 A1 专业图纸，关注最终方案的规范性与可落地性。</p></article>
+      </div>
+      <div class="skill-image-card fade-in">
+        <div><img src="assets/skills.png" alt="能力模型"></div>
+        <div class="skill-text">
+          <h3>工程 + 产品 + AI 的复合能力模型</h3>
+          <ul><li>985 工科背景 + 央企项目实战经验</li><li>从 0 到 1 完整项目闭环能力</li><li>深度使用 ChatGPT、DeepSeek、GLM 等主流 AI 工具</li><li>SCI 论文成果彰显结构化研究思维</li><li>跨团队协同与规范化交付经验</li></ul>
         </div>
       </div>
-    </section>
-
-    <section>
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="section-kicker">CAPABILITY</p>
-          <h2>AI 产品经理所需的四类底层能力。</h2>
-        </div>
-        <div class="grid-4">
-          <article class="card">
-            <div class="icon">01</div>
-            <h3>需求分析</h3>
-            <p>将“除垢效率低”等工程问题拆解为可量化研究目标和参数优化任务。</p>
-          </article>
-          <article class="card">
-            <div class="icon alt">02</div>
-            <h3>数据决策</h3>
-            <p>使用 MATLAB、Origin 进行建模、可视化和参数优化，形成证据驱动的判断。</p>
-          </article>
-          <article class="card">
-            <div class="icon green">03</div>
-            <h3>跨方协同</h3>
-            <p>在设计方、施工方、供应商和业务方之间对齐需求、推动共识、解决现场问题。</p>
-          </article>
-          <article class="card">
-            <div class="icon amber">04</div>
-            <h3>交付意识</h3>
-            <p>参与 10+ 项目、输出 80+ 张 A1 专业图纸，关注最终方案的规范性与可落地性。</p>
-          </article>
+    </div></section>
+    <section class="case-section" id="case"><div class="section-inner">
+      <div class="section-head fade-in"><p class="section-kicker">FEATURED CASE</p><h2>代表项目：超声波除霾阻霾机理研究。</h2><p class="section-lede">这个项目可以作为个人网站的核心案例：它完整体现了需求分析、方案设计、原型构建、数据验证和成果交付。</p></div>
+      <div class="case-layout">
+        <div class="case-image fade-in"><img src="assets/project.png" alt="项目示意图"></div>
+        <aside class="case-summary fade-in">
+          <h3>中核集团合作项目</h3>
+          <div class="case-meta"><span>角色：项目负责人</span><span>周期：2022.12 - 2024.06</span><span>成果：获中核集团书面认可，产出 SCI 论文 2 篇</span></div>
+          <div class="case-tags"><span class="tag">需求拆解</span><span class="tag">结构设计</span><span class="tag">参数优化</span><span class="tag">MATLAB</span><span class="tag">产品闭环</span></div>
+        </aside>
+      </div>
+      <div class="timeline fade-in" style="margin-top:32px">
+        <article class="step"><div class="step-label">Problem</div><div><h4>从业务痛点出发</h4><p>对接中核集团需求，将"蒸汽发生器除霾效率低"的工程问题拆解为最优参数方案。</p></div></article>
+        <article class="step"><div class="step-label">Solution</div><div><h4>设计可验证方案</h4><p>独立完成试验台整机结构设计，主导零部件选型、外协加工、装配调试。</p></div></article>
+        <article class="step"><div class="step-label">Data</div><div><h4>用模型寻找最优解</h4><p>建立超声波衰减特性数学模型，通过 MATLAB 参数优化锁定工艺窗口。</p></div></article>
+        <article class="step"><div class="step-label">Outcome</div><div><h4>交付可信成果</h4><p>项目成果获得合作方书面认可，并形成论文产出，体现系统性解决问题能力。</p></div></article>
+      </div>
+    </div></section>
+    <section class="video-section" id="video"><div class="section-inner">
+      <div class="section-head fade-in"><p class="section-kicker">INTRO VIDEO</p><h2>一分钟了解我</h2><p class="section-lede">一段简短的自我介绍，讲述我从工程技术到 AI 产品经理的转型故事。</p></div>
+      <div class="video-wrapper fade-in">
+        <div class="play-btn" onclick="alert('请替换为您的自我介绍视频文件')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <p class="video-placeholder-text">点击播放自我介绍视频（可替换为真实视频文件）</p>
+      </div>
+    </div></section>
+    <section id="experience"><div class="section-inner">
+      <div class="section-head fade-in"><p class="section-kicker">EXPERIENCE</p><h2>工作经验中的产品能力迁移。</h2></div>
+      <div class="experience-list">
+        <article class="experience-item fade-in">
+          <div class="exp-company"><h3>湖南稀土产业集团有限公司</h3><div class="exp-meta">央企 / 工程管理 / 2025.05 - 2025.11</div></div>
+          <div class="exp-detail"><ul><li>负责湖南独居石综合利用项目前期需求调研与可行性研究，独立编制可行性报告。</li><li>系统评估项目必要性、技术路线与资源需求，对应产品经理 BRD 前期调研逻辑。</li><li>协调参建单位技术对接，整合多方需求与数据，推动信息对齐与方案共识。</li></ul></div>
+        </article>
+        <article class="experience-item fade-in">
+          <div class="exp-company"><h3>中冶南方都市环保工程技术股份有限公司</h3><div class="exp-meta">央企 / 工艺工程师 / 2024.07 - 2025.04</div></div>
+          <div class="exp-detail"><ul><li>基于现场施工反馈优化图纸标注与施工指引，使图纸疑问减少约 30%。</li><li>驻项目一线 160 天，在设总方、施工方、供应商之间担任技术沟通枢纽。</li><li>参与 10+ 项目，输出 80+ 张 A1 专业图纸，具备规范交付和落地意识。</li></ul></div>
+        </article>
+      </div>
+    </div></section>
+    <section class="ai-section" id="ai"><div class="section-inner">
+      <div class="ai-layout">
+        <div class="section-head fade-in"><p class="section-kicker">AI PRODUCT VIEW</p><h2>我的 AI 产品认知。</h2><p class="section-lede">我关注的不只是模型能力本身，也关注模型如何进入具体流程、降低使用门槛，并通过交互设计和数据反馈形成真实价值。</p></div>
+        <div class="ai-card fade-in">
+          <h3>关注方向</h3>
+          <ul class="ai-list">
+            <li>ChatGPT、DeepSeek、GLM 等主流大模型产品的体验差异。</li>
+            <li>Prompt 调试、任务拆解和对话式交互优化。</li>
+            <li>AI 工具从"能力展示"到"业务流程嵌入"的产品化路径。</li>
+            <li>用数据反馈判断 AI 功能是否真正降低成本、提升效率或改善体验。</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <section class="case-section" id="case">
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="section-kicker">FEATURED CASE</p>
-          <h2>代表项目：超声波除垢阻垢机理研究。</h2>
-          <p class="section-lede">
-            这个项目可以作为个人网站的核心案例：它完整体现了需求分析、方案设计、原型构建、数据验证和成果交付。
-          </p>
-        </div>
-        <div class="case-layout">
-          <aside class="case-summary">
-            <h3>中核集团合作项目</h3>
-            <p>角色：项目负责人</p>
-            <p>周期：2022.12 - 2024.06</p>
-            <p>成果：获中核集团书面认可，产出 SCI 论文 2 篇。</p>
-            <div class="tag-list">
-              <span class="tag">需求拆解</span>
-              <span class="tag">结构设计</span>
-              <span class="tag">参数优化</span>
-              <span class="tag">MATLAB</span>
-              <span class="tag">产品闭环</span>
-            </div>
-          </aside>
-          <div class="timeline">
-            <article class="step">
-              <b>Problem</b>
-              <div>
-                <h4>从业务痛点出发</h4>
-                <p>对接中核集团需求，将“蒸汽发生器除垢效率低”的工程问题拆解为超声波衰减规律与最优参数方案。</p>
-              </div>
-            </article>
-            <article class="step">
-              <b>Solution</b>
-              <div>
-                <h4>设计可验证方案</h4>
-                <p>独立完成试验台整机结构设计，主导零部件选型、外协加工、装配调试，形成从方案到原型的落地路径。</p>
-              </div>
-            </article>
-            <article class="step">
-              <b>Data</b>
-              <div>
-                <h4>用模型寻找最优解</h4>
-                <p>建立超声波衰减特性数学模型，通过 MATLAB 参数优化锁定工艺窗口，用数据支撑关键决策。</p>
-              </div>
-            </article>
-            <article class="step">
-              <b>Outcome</b>
-              <div>
-                <h4>交付可信成果</h4>
-                <p>项目成果获得合作方书面认可，并形成论文产出，体现结构化论证和系统性解决问题能力。</p>
-              </div>
-            </article>
-          </div>
-        </div>
+    </div></section>
+    <section><div class="section-inner">
+      <div class="edu-grid">
+        <article class="card fade-in">
+          <div class="section-head"><p class="section-kicker">EDUCATION</p><h2>教育背景</h2></div>
+          <div class="school-item"><div><strong>武汉大学 硕士</strong><div class="school-date">能源动力 / 2022.09 - 2024.06</div></div><span class="school-badge">985 / 双一流</span></div>
+          <div class="school-item"><div><strong>武汉大学 本科</strong><div class="school-date">核工程与核技术 / 2018.09 - 2022.06</div></div><span class="school-badge">985 / 双一流</span></div>
+        </article>
+        <article class="card fade-in">
+          <div class="section-head"><p class="section-kicker">HONORS</p><h2>荣誉与成果</h2></div>
+          <p style="font-size:15px;color:var(--muted);line-height:1.7;">国家励志奖学金、乙等奖学金、丙等奖学金、武汉大学优秀学生、优秀共青团员、科技创新先进个人、全国大学生节能减排竞赛全国三等奖、"核+X"创意大赛优秀。</p>
+        </article>
       </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="section-kicker">EXPERIENCE</p>
-          <h2>工作经历中的产品能力迁移。</h2>
-        </div>
-        <div class="experience-list">
-          <article class="experience">
-            <div>
-              <h3>湖南稀土产业集团有限公司</h3>
-              <div class="meta">央企 · 工程管理 · 2025.05 - 2025.11</div>
-            </div>
-            <ul>
-              <li>负责湖南独居石综合利用项目前期需求调研与可行性研究，独立编制可行性报告。</li>
-              <li>系统评估项目必要性、技术路径与资源需求，对应产品经理 BRD 前期调研逻辑。</li>
-              <li>协调参建单位技术对接，整合多方需求与数据，推动信息对齐与方案共识。</li>
-            </ul>
-          </article>
-          <article class="experience">
-            <div>
-              <h3>中冶南方都市环保工程技术股份有限公司</h3>
-              <div class="meta">央企 · 工艺工程师 · 2024.07 - 2025.04</div>
-            </div>
-            <ul>
-              <li>基于现场施工反馈优化图纸标注与施工指引，使图纸疑问减少约 30%。</li>
-              <li>驻项目一线 60 天，在设计方、施工方、供应商之间担任技术沟通枢纽。</li>
-              <li>参与 10+ 项目，输出 80+ 张 A1 专业图纸，具备规范交付和落地意识。</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="ai-section" id="ai">
-      <div class="section-inner">
-        <div class="ai-layout">
-          <div class="section-head">
-            <p class="section-kicker">AI PRODUCT VIEW</p>
-            <h2>我的 AI 产品认知。</h2>
-            <p class="section-lede">
-              我关注的不只是模型能力本身，也关注模型如何进入具体流程、降低使用门槛，并通过交互设计和数据反馈形成真实价值。
-            </p>
-          </div>
-          <article class="ai-note">
-            <h3>关注方向</h3>
-            <ul class="ai-list">
-              <li>ChatGPT、DeepSeek、GLM 等主流大模型产品的体验差异。</li>
-              <li>Prompt 调试、任务拆解和对话式交互优化。</li>
-              <li>AI 工具从“能力展示”到“业务流程嵌入”的产品化路径。</li>
-              <li>用数据反馈判断 AI 功能是否真正降低成本、提升效率或改善体验。</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-inner">
-        <div class="education-grid">
-          <article class="card">
-            <div class="section-head">
-              <p class="section-kicker">EDUCATION</p>
-              <h2>教育背景</h2>
-            </div>
-            <div class="school">
-              <div>
-                <strong>武汉大学 硕士</strong>
-                <span>能源动力 · 2022.09 - 2024.06</span>
-              </div>
-              <span>985 / 双一流</span>
-            </div>
-            <div class="school">
-              <div>
-                <strong>武汉大学 本科</strong>
-                <span>核工程与核技术 · 2018.09 - 2022.06</span>
-              </div>
-              <span>985 / 双一流</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="section-head">
-              <p class="section-kicker">HONORS</p>
-              <h2>荣誉与成果</h2>
-            </div>
-            <p>国家励志奖学金、乙等奖学金、丙等奖学金、武汉大学优秀学生、优秀共青团员、科技创新先进个人、全国大学生节能减排竞赛全国三等奖、“核+X”创意大赛优秀。</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    </div></section>
   </main>
-
-  <footer class="footer" id="contact">
-    <div class="footer-inner">
-      <div>
-        <h2>期待加入 AI 产品团队，参与真实问题的产品化解决。</h2>
-        <p>我希望把工程背景中的系统思维、数据验证习惯和项目推进经验，迁移到 AI 产品设计、需求分析和功能落地中。</p>
-      </div>
-      <div class="contact">
-        <span>邮箱：19108461081@163.com</span>
-        <span>手机：19108461081</span>
-        <span>地点：甘肃武威</span>
-        <span>状态：随时到岗</span>
-      </div>
+  <footer class="footer" id="contact"><div class="footer-inner">
+    <h2>期待加入 AI 产品团队，参与真实问题的产品化解决。</h2>
+    <p>我希望把工程背景中的系统思维、数据验证习惯和项目推进经验，迁移到 AI 产品设计、需求分析和功能落地中。</p>
+    <div class="footer-contact">
+      <span class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>9108461081@163.com</span>
+      <span class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>9108461081</span>
+      <span class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>甘肃武威</span>
+      <span class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>随时到岗</span>
     </div>
-  </footer>
+  </div></footer>
 </body>
 </html>
